@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PFMS CASH LEDGER</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<header>
+<h1>CANARA BANK PFMS CASH LEDGER</h1>
+<h3>Financial Year 2025-26</h3>
+</header>
+
+<div class="school-section no-print">
+<input type="text" id="schoolName" placeholder="School Name">
+<input type="text" id="diseCode" placeholder="DISE Code">
+<button onclick="saveSchool()">Save School Details</button>
+</div>
+
+<div class="entry-section no-print">
+
+<h2>Add Entry</h2>
+
+<div class="form-row">
+<input type="date" id="entryDate">
+
+<input type="text"
+id="particulars"
+placeholder="ವಿವರಗಳು">
+</div>
+
+<h3>Receipt (ಜಮಾ)</h3>
+
+<div class="grant-grid">
+
+<input type="number" id="r_school" placeholder="School Grant">
+
+<input type="number" id="r_pta" placeholder="PTA Meeting">
+
+<input type="number" id="r_eco" placeholder="Eco Club">
+
+<input type="number" id="r_lba" placeholder="LBA Grant">
+
+<input type="number" id="r_udise" placeholder="UDISE+">
+
+<input type="number" id="r_sdmc" placeholder="SDMC">
+
+<input type="number" id="r_library" placeholder="Library">
+
+<input type="number" id="r_tlm" placeholder="TLM">
+
+</div>
+
+<h3>Payment (ಖರ್ಚು)</h3>
+
+<div class="grant-grid">
+
+<input type="number" id="p_school" placeholder="School Grant">
+
+<input type="number" id="p_pta" placeholder="PTA Meeting">
+
+<input type="number" id="p_eco" placeholder="Eco Club">
+
+<input type="number" id="p_lba" placeholder="LBA Grant">
+
+<input type="number" id="p_udise" placeholder="UDISE+">
+
+<input type="number" id="p_sdmc" placeholder="SDMC">
+
+<input type="number" id="p_library" placeholder="Library">
+
+<input type="number" id="p_tlm" placeholder="TLM">
+
+</div>
+
+<button class="save-btn" onclick="addEntry()">
+SAVE ENTRY
+</button>
+
+</div>
+
+<div class="ledger-section">
+
+<h2 id="schoolTitle">
+PFMS CASH LEDGER
+</h2>
+
+<table id="ledgerTable">
+
+<thead>
+
+<tr>
+<th colspan="11">
+RECEIPTS (ಜಮಾ)
+</th>
+
+<th class="divider"></th>
+
+<th colspan="11">
+PAYMENTS (ಖರ್ಚು)
+</th>
+</tr>
+
+<tr>
+
+<th>DATE</th>
+<th>ವಿವರಗಳು</th>
+<th>SG</th>
+<th>PTA</th>
+<th>ECO</th>
+<th>LBA</th>
+<th>UDISE</th>
+<th>SDMC</th>
+<th>LIB</th>
+<th>TLM</th>
+<th>TOTAL</th>
+
+<th class="divider"></th>
+
+<th>DATE</th>
+<th>ವಿವರಗಳು</th>
+<th>SG</th>
+<th>PTA</th>
+<th>ECO</th>
+<th>LBA</th>
+<th>UDISE</th>
+<th>SDMC</th>
+<th>LIB</th>
+<th>TLM</th>
+<th>TOTAL</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ledgerBody">
+
+</tbody>
+
+<tfoot id="ledgerFooter">
+
+</tfoot>
+
+</table>
+
+</div>
+
+<div class="button-area no-print">
+
+<button onclick="window.print()">
+PRINT
+</button>
+
+<button onclick="exportData()">
+EXPORT
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
