@@ -1,0 +1,95 @@
+let ledgerData =
+JSON.parse(localStorage.getItem("pfmsLedger")) || [];
+
+function saveSchool(){
+
+const schoolName =
+document.getElementById("schoolName").value;
+
+const diseCode =
+document.getElementById("diseCode").value;
+
+localStorage.setItem(
+"schoolName",
+schoolName
+);
+
+localStorage.setItem(
+"diseCode",
+diseCode
+);
+
+document.getElementById(
+"schoolTitle"
+).innerHTML =
+schoolName +
+" - PFMS CASH LEDGER";
+
+alert("School Details Saved");
+
+}
+
+function getValue(id){
+
+return parseFloat(
+document.getElementById(id).value
+) || 0;
+
+}
+
+function addEntry(){
+
+const entry = {
+
+date:
+document.getElementById("entryDate").value,
+
+particulars:
+document.getElementById("particulars").value,
+
+receipt:{
+
+school:getValue("r_school"),
+pta:getValue("r_pta"),
+eco:getValue("r_eco"),
+lba:getValue("r_lba"),
+udise:getValue("r_udise"),
+sdmc:getValue("r_sdmc"),
+library:getValue("r_library"),
+tlm:getValue("r_tlm")
+
+},
+
+payment:{
+
+school:getValue("p_school"),
+pta:getValue("p_pta"),
+eco:getValue("p_eco"),
+lba:getValue("p_lba"),
+udise:getValue("p_udise"),
+sdmc:getValue("p_sdmc"),
+library:getValue("p_library"),
+tlm:getValue("p_tlm")
+
+}
+
+};
+
+ledgerData.push(entry);
+
+localStorage.setItem(
+"pfmsLedger",
+JSON.stringify(ledgerData)
+);
+
+clearForm();
+
+loadLedger();
+
+}
+
+function clearForm(){
+
+document.getElementById(
+"entryDate"
+).
